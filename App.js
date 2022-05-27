@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import CountDown from 'react-native-countdown-component';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <CountDown
+        until={259200}
+        size={20}
+        timeLabels={{d: 'DAY(S)', h: 'HOUR(S)', m: 'MINUTE(S)', s: 'SECOND(S)'}}
+        digitTxtStyle={{color: '#FFF', fontSize: '30px'}}
+        digitStyle={{backgroundColor: '#000', height: '40px', marginLeft: '5px', marginRight: '5px'}}
+        timeLabelStyle={{color: '#FFF', fontSize: '8px', marginTop: '8px'}}
+        style={{padding: 0}}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#7900e5',
+    flex:1,
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center'
   },
 });
